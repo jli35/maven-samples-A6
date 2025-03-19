@@ -26,7 +26,7 @@ pipeline {
           sh 'git bisect reset'
           sh 'git checkout master'
         } catch (Exception e) {
-          echo "Failed to uncheckout the branch: ${e.message}"
+          echo "Failed to reset: ${e.message}"
         } finally {
           // Optional: Add any cleanup steps here
         }
