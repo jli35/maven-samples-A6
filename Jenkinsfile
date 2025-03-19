@@ -25,7 +25,7 @@ git bisect run mvn clean test'''
               try {
                   sh 'git checkout -'
               } catch (Exception e) {
-                  echo "Failed to uncheckout the branch: ${e.message}"
+                  echo "Failed to reset branch: ${e.message}"
               }
           }
       }
