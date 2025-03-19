@@ -19,4 +19,15 @@ git bisect run mvn clean test'''
     maven 'DHT_MVN'
     jdk 'DHT_SENSE'
   }
+  post {
+      failure {
+          script {
+              try {
+                  sh 'git checkout -'
+              } catch (Exception e) {
+                  echo "Failed to uncheckout the branch: ${e.message}"
+              }
+          }
+      }
+  }
 }
