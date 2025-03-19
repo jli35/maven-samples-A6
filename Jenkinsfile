@@ -23,7 +23,8 @@ pipeline {
     failure {
       script {
         try {
-          sh 'git checkout -'
+          sh 'git bisect reset'
+          sh 'git checkout master'
         } catch (Exception e) {
           echo "Failed to uncheckout the branch: ${e.message}"
         } finally {
